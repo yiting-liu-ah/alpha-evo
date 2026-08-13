@@ -1,0 +1,214 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Overall Architecture of Alpha Evo</title>
+  <desc id="desc">A thirteen-step governed WorldQuant BRAIN alpha-research workflow. The top row moves from research scope through planning, validation, simulation, and diagnosis. The bottom row moves from eligibility and submission through memory, structured feedback, mutation, crossover, and a governed alpha pool, with an iterative loop back to planning.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#172033"/>
+    </marker>
+    <marker id="arrow-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#7254a3"/>
+    </marker>
+    <filter id="soft-shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#172033" flood-opacity="0.10"/>
+    </filter>
+    <style>
+      .canvas { fill: #ffffff; }
+      .title { font-family: Georgia, 'Times New Roman', serif; font-size: 38px; font-weight: 700; fill: #101522; text-anchor: middle; }
+      .subtitle { font-family: Arial, sans-serif; font-size: 17px; fill: #5b6475; text-anchor: middle; }
+      .stage-label { font-family: Georgia, 'Times New Roman', serif; font-size: 19px; font-weight: 700; font-style: italic; text-anchor: middle; }
+      .stage-rule { stroke-width: 1.4; stroke-dasharray: 6 6; }
+      .stage-planning { fill: #f4f8ee; stroke: #7d9a67; stroke-width: 1.5; }
+      .stage-validation { fill: #eef8f7; stroke: #5c9791; stroke-width: 1.5; }
+      .stage-evaluation { fill: #fbf8e9; stroke: #b29b4f; stroke-width: 1.5; }
+      .stage-feedback { fill: #f7f1fb; stroke: #9174ad; stroke-width: 1.5; }
+      .node { stroke: #263247; stroke-width: 1.6; filter: url(#soft-shadow); }
+      .node-input { fill: #f8fafc; }
+      .node-planning { fill: #f7fbf2; }
+      .node-validation { fill: #f1fbfa; }
+      .node-execution { fill: #eef5fc; }
+      .node-evaluation { fill: #fffdf2; }
+      .node-feedback { fill: #fbf7fd; }
+      .node-result { fill: #fff6f4; stroke: #a95e59; }
+      .number { fill: #102b4e; }
+      .number-text { font-family: Arial, sans-serif; font-size: 15px; font-weight: 700; fill: #ffffff; text-anchor: middle; dominant-baseline: middle; }
+      .node-title { font-family: Georgia, 'Times New Roman', serif; font-size: 18px; font-weight: 700; fill: #131a28; text-anchor: middle; }
+      .node-copy { font-family: Arial, sans-serif; font-size: 14px; fill: #3d4656; text-anchor: middle; }
+      .node-rule { stroke: #7f8794; stroke-width: 1.1; stroke-dasharray: 5 4; }
+      .flow { fill: none; stroke: #172033; stroke-width: 2.2; marker-end: url(#arrow); }
+      .loop { fill: none; stroke: #7254a3; stroke-width: 2.5; marker-end: url(#arrow-purple); }
+      .loop-label { font-family: Georgia, 'Times New Roman', serif; font-size: 16px; font-weight: 700; font-style: italic; fill: #7254a3; text-anchor: middle; }
+      .core-box { fill: #fbfcfe; stroke: #657187; stroke-width: 1.4; stroke-dasharray: 7 5; }
+      .core-title { font-family: Georgia, 'Times New Roman', serif; font-size: 17px; font-weight: 700; fill: #1d2939; }
+      .core-copy { font-family: Arial, sans-serif; font-size: 15px; fill: #3f4a5a; }
+      .legend { font-family: Arial, sans-serif; font-size: 13px; fill: #4b5565; }
+      .legend-line { stroke: #7254a3; stroke-width: 2; marker-end: url(#arrow-purple); }
+    </style>
+  </defs>
+
+  <rect class="canvas" width="1600" height="1000"/>
+  <text class="title" x="800" y="52">Overall Architecture of Alpha Evo</text>
+  <text class="subtitle" x="800" y="80">QuantaAlpha-inspired, governed WorldQuant BRAIN research loop</text>
+
+  <!-- Stage containers -->
+  <rect class="stage-planning" x="242" y="98" width="668" height="350" rx="18"/>
+  <text class="stage-label" x="576" y="126" fill="#55713e">Planning &amp; Realization Stage</text>
+  <line class="stage-rule" x1="470" y1="137" x2="682" y2="137" stroke="#55713e"/>
+
+  <rect class="stage-validation" x="912" y="98" width="448" height="350" rx="18"/>
+  <text class="stage-label" x="1136" y="126" fill="#39726d">Verification Stage</text>
+  <line class="stage-rule" x1="1054" y1="137" x2="1218" y2="137" stroke="#39726d"/>
+
+  <rect class="stage-evaluation" x="902" y="566" width="686" height="286" rx="18"/>
+  <text class="stage-label" x="1245" y="594" fill="#8d7629">Evaluation, Submission &amp; Memory</text>
+  <line class="stage-rule" x1="1120" y1="605" x2="1370" y2="605" stroke="#8d7629"/>
+
+  <rect class="stage-feedback" x="442" y="566" width="448" height="286" rx="18"/>
+  <text class="stage-label" x="666" y="594" fill="#72518f">Feedback &amp; Evolution Stage</text>
+  <line class="stage-rule" x1="565" y1="605" x2="767" y2="605" stroke="#72518f"/>
+
+  <!-- Top row nodes -->
+  <g>
+    <rect class="node node-input" x="24" y="146" width="205" height="258" rx="14"/>
+    <circle class="number" cx="48" cy="170" r="15"/><text class="number-text" x="48" y="170">1</text>
+    <text class="node-title" x="126" y="202"><tspan x="126">Research Scope</tspan><tspan x="126" dy="23">&amp; Authority</tspan></text>
+    <line class="node-rule" x1="46" y1="254" x2="207" y2="254"/>
+    <text class="node-copy" x="126" y="281"><tspan x="126">Region · Universe · Delay</tspan><tspan x="126" dy="22">research budget</tspan><tspan x="126" dy="22">simulation / submission rights</tspan><tspan x="126" dy="22">security boundaries</tspan></text>
+  </g>
+
+  <g>
+    <rect class="node node-planning" x="254" y="146" width="205" height="258" rx="14"/>
+    <circle class="number" cx="278" cy="170" r="15"/><text class="number-text" x="278" y="170">2</text>
+    <text class="node-title" x="356" y="202"><tspan x="356">Account Memory</tspan><tspan x="356" dy="23">&amp; Field Catalog</tspan></text>
+    <line class="node-rule" x1="276" y1="254" x2="437" y2="254"/>
+    <text class="node-copy" x="356" y="281"><tspan x="356">ACTIVE alpha snapshot</tspan><tspan x="356" dy="22">typed field metadata</tspan><tspan x="356" dy="22">validated lessons</tspan><tspan x="356" dy="22">private state stays local</tspan></text>
+  </g>
+
+  <g>
+    <rect class="node node-planning" x="474" y="146" width="205" height="258" rx="14"/>
+    <circle class="number" cx="498" cy="170" r="15"/><text class="number-text" x="498" y="170">3</text>
+    <text class="node-title" x="576" y="202"><tspan x="576">Diversified</tspan><tspan x="576" dy="23">Hypothesis Planning</tspan></text>
+    <line class="node-rule" x1="496" y1="254" x2="657" y2="254"/>
+    <text class="node-copy" x="576" y="281"><tspan x="576">10 research directions</tspan><tspan x="576" dy="22">observable proxies</tspan><tspan x="576" dy="22">falsifiable mechanism</tspan><tspan x="576" dy="22">expected failure modes</tspan></text>
+  </g>
+
+  <g>
+    <rect class="node node-planning" x="694" y="146" width="205" height="258" rx="14"/>
+    <circle class="number" cx="718" cy="170" r="15"/><text class="number-text" x="718" y="170">4</text>
+    <text class="node-title" x="796" y="202"><tspan x="796">Candidate Contract</tspan><tspan x="796" dy="23">&amp; FastExpr</tspan></text>
+    <line class="node-rule" x1="716" y1="254" x2="877" y2="254"/>
+    <text class="node-copy" x="796" y="281"><tspan x="796">hypothesis → semantics</tspan><tspan x="796" dy="22">fields + operators</tspan><tspan x="796" dy="22">expression + settings</tspan><tspan x="796" dy="22">operation + lineage</tspan></text>
+  </g>
+
+  <g>
+    <rect class="node node-validation" x="924" y="146" width="205" height="258" rx="14"/>
+    <circle class="number" cx="948" cy="170" r="15"/><text class="number-text" x="948" y="170">5</text>
+    <text class="node-title" x="1026" y="202"><tspan x="1026">Static</tspan><tspan x="1026" dy="23">Verification Gates</tspan></text>
+    <line class="node-rule" x1="946" y1="254" x2="1107" y2="254"/>
+    <text class="node-copy" x="1026" y="281"><tspan x="1026">field and type validity</tspan><tspan x="1026" dy="22">semantic consistency</tspan><tspan x="1026" dy="22">complexity + identity</tspan><tspan x="1026" dy="22">structural redundancy</tspan></text>
+  </g>
+
+  <g>
+    <rect class="node node-validation" x="1144" y="146" width="205" height="258" rx="14"/>
+    <circle class="number" cx="1168" cy="170" r="15"/><text class="number-text" x="1168" y="170">6</text>
+    <text class="node-title" x="1246" y="202"><tspan x="1246">Safe Dry Run</tspan><tspan x="1246" dy="23">&amp; Budget Check</tspan></text>
+    <line class="node-rule" x1="1166" y1="254" x2="1327" y2="254"/>
+    <text class="node-copy" x="1246" y="281"><tspan x="1246">no BRAIN write</tspan><tspan x="1246" dy="22">candidate validation</tspan><tspan x="1246" dy="22">request / time budget</tspan><tspan x="1246" dy="22">audit event prepared</tspan></text>
+  </g>
+
+  <g>
+    <rect class="node node-execution" x="1374" y="146" width="205" height="258" rx="14"/>
+    <circle class="number" cx="1398" cy="170" r="15"/><text class="number-text" x="1398" y="170">7</text>
+    <text class="node-title" x="1476" y="202"><tspan x="1476">BRAIN Simulation</tspan><tspan x="1476" dy="23">&amp; IS Diagnosis</tspan></text>
+    <line class="node-rule" x1="1396" y1="254" x2="1557" y2="254"/>
+    <text class="node-copy" x="1476" y="281"><tspan x="1476">authenticate + simulate</tspan><tspan x="1476" dy="22">poll results + PnL</tspan><tspan x="1476" dy="22">grade · Sharpe · Fitness</tspan><tspan x="1476" dy="22">TO · DD · Margin · checks</tspan></text>
+  </g>
+
+  <!-- Top-row arrows -->
+  <path class="flow" d="M 229 275 L 250 275"/>
+  <path class="flow" d="M 459 275 L 470 275"/>
+  <path class="flow" d="M 679 275 L 690 275"/>
+  <path class="flow" d="M 899 275 L 920 275"/>
+  <path class="flow" d="M 1129 275 L 1140 275"/>
+  <path class="flow" d="M 1349 275 L 1370 275"/>
+
+  <!-- Transition down -->
+  <path class="flow" d="M 1476 404 L 1476 626"/>
+
+  <!-- Bottom row nodes: flow runs right to left -->
+  <g>
+    <rect class="node node-evaluation" x="1374" y="626" width="205" height="190" rx="14"/>
+    <circle class="number" cx="1398" cy="650" r="15"/><text class="number-text" x="1398" y="650">8</text>
+    <text class="node-title" x="1476" y="680"><tspan x="1476">Eligibility &amp;</tspan><tspan x="1476" dy="22">Correlation Gate</tspan></text>
+    <line class="node-rule" x1="1396" y1="729" x2="1557" y2="729"/>
+    <text class="node-copy" x="1476" y="752"><tspan x="1476">grade ≥ Average · no FAIL</tspan><tspan x="1476" dy="20">≥ 50 aligned PnL days</tspan><tspan x="1476" dy="20">|correlation| &lt; 0.70</tspan></text>
+  </g>
+
+  <g>
+    <rect class="node node-evaluation" x="1144" y="626" width="205" height="190" rx="14"/>
+    <circle class="number" cx="1168" cy="650" r="15"/><text class="number-text" x="1168" y="650">9</text>
+    <text class="node-title" x="1246" y="680"><tspan x="1246">Controlled</tspan><tspan x="1246" dy="22">Submission</tspan></text>
+    <line class="node-rule" x1="1166" y1="729" x2="1327" y2="729"/>
+    <text class="node-copy" x="1246" y="752"><tspan x="1246">qualified candidates only</tspan><tspan x="1246" dy="20">submit → wait for terminal</tspan><tspan x="1246" dy="20">success only if ACTIVE</tspan></text>
+  </g>
+
+  <g>
+    <rect class="node node-evaluation" x="914" y="626" width="205" height="190" rx="14"/>
+    <circle class="number" cx="938" cy="650" r="15"/><text class="number-text" x="938" y="650">10</text>
+    <text class="node-title" x="1016" y="680"><tspan x="1016">Factor Pool &amp;</tspan><tspan x="1016" dy="22">Historical Memory</tspan></text>
+    <line class="node-rule" x1="936" y1="729" x2="1097" y2="729"/>
+    <text class="node-copy" x="1016" y="752"><tspan x="1016">ACTIVE PnL references</tspan><tspan x="1016" dy="20">lineage + trajectory reward</tspan><tspan x="1016" dy="20">sanitized aggregate lessons</tspan></text>
+  </g>
+
+  <g>
+    <rect class="node node-feedback" x="684" y="626" width="205" height="190" rx="14"/>
+    <circle class="number" cx="708" cy="650" r="15"/><text class="number-text" x="708" y="650">11</text>
+    <text class="node-title" x="786" y="680"><tspan x="786">Fault-localized</tspan><tspan x="786" dy="22">Feedback</tspan></text>
+    <line class="node-rule" x1="706" y1="729" x2="867" y2="729"/>
+    <text class="node-copy" x="786" y="752"><tspan x="786">freeze proven segments</tspan><tspan x="786" dy="20">one explicit modification</tspan><tspan x="786" dy="20">record action-level outcome</tspan></text>
+  </g>
+
+  <g>
+    <rect class="node node-feedback" x="454" y="626" width="205" height="190" rx="14"/>
+    <circle class="number" cx="478" cy="650" r="15"/><text class="number-text" x="478" y="650">12</text>
+    <text class="node-title" x="556" y="680"><tspan x="556">Mutation →</tspan><tspan x="556" dy="22">Crossover</tspan></text>
+    <line class="node-rule" x1="476" y1="729" x2="637" y2="729"/>
+    <text class="node-copy" x="556" y="752"><tspan x="556">14 one-change children</tspan><tspan x="556" dy="20">evaluate mutation first</tspan><tspan x="556" dy="20">then complementary crossover</tspan></text>
+  </g>
+
+  <g>
+    <rect class="node node-result" x="70" y="626" width="270" height="190" rx="14"/>
+    <circle class="number" cx="94" cy="650" r="15"/><text class="number-text" x="94" y="650">13</text>
+    <text class="node-title" x="205" y="680"><tspan x="205">Governed Alpha Pool</tspan><tspan x="205" dy="22">&amp; Audit Evidence</tspan></text>
+    <line class="node-rule" x1="94" y1="729" x2="316" y2="729"/>
+    <text class="node-copy" x="205" y="752"><tspan x="205">robust · diverse · auditable</tspan><tspan x="205" dy="20">stress · decay · ablation</tspan><tspan x="205" dy="20">budget · transfer · recovery</tspan></text>
+  </g>
+
+  <!-- Bottom-row arrows -->
+  <path class="flow" d="M 1374 721 L 1353 721"/>
+  <path class="flow" d="M 1144 721 L 1123 721"/>
+  <path class="flow" d="M 914 721 L 893 721"/>
+  <path class="flow" d="M 684 721 L 663 721"/>
+  <path class="flow" d="M 454 721 L 344 721"/>
+
+  <!-- Iteration loop -->
+  <path class="loop" d="M 556 626 C 556 545 576 505 576 408"/>
+  <text class="loop-label" x="655" y="525">structured next-iteration loop</text>
+
+  <!-- Core idea and legend -->
+  <rect class="core-box" x="70" y="880" width="970" height="74" rx="14"/>
+  <circle cx="108" cy="917" r="21" fill="#eef5fc" stroke="#315b87" stroke-width="1.5"/>
+  <path d="M 101 915 C 101 908 106 903 113 903 C 120 903 125 908 125 915 C 125 920 122 923 119 926 L 119 932 L 107 932 L 107 926 C 103 923 101 920 101 915 Z" fill="none" stroke="#315b87" stroke-width="2"/>
+  <line x1="109" y1="936" x2="117" y2="936" stroke="#315b87" stroke-width="2"/>
+  <text class="core-title" x="143" y="910">Core idea:</text>
+  <text class="core-copy" x="250" y="910"><tspan x="250">AI proposes bounded candidate trajectories; deterministic gates, BRAIN evidence,</tspan><tspan x="143" dy="23">and structured feedback drive safe, reproducible, and auditable alpha evolution.</tspan></text>
+
+  <g transform="translate(1080 878)">
+    <text class="core-title" x="0" y="16">Legend</text>
+    <rect x="0" y="31" width="18" height="14" fill="#f7fbf2" stroke="#7d9a67"/><text class="legend" x="26" y="43">Planning</text>
+    <rect x="105" y="31" width="18" height="14" fill="#f1fbfa" stroke="#5c9791"/><text class="legend" x="131" y="43">Verification</text>
+    <rect x="240" y="31" width="18" height="14" fill="#eef5fc" stroke="#315b87"/><text class="legend" x="266" y="43">BRAIN</text>
+    <rect x="0" y="57" width="18" height="14" fill="#fffdf2" stroke="#b29b4f"/><text class="legend" x="26" y="69">Evaluation &amp; memory</text>
+    <rect x="165" y="57" width="18" height="14" fill="#fbf7fd" stroke="#9174ad"/><text class="legend" x="191" y="69">Evolution</text>
+    <line class="legend-line" x1="283" y1="64" x2="323" y2="64"/><text class="legend" x="331" y="69">Iteration</text>
+  </g>
+</svg>
