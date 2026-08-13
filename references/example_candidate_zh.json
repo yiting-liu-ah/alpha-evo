@@ -1,0 +1,50 @@
+{
+  "direction_id": "profitability-quality",
+  "hypothesis": {
+    "mechanism": "经营盈利能力改善的信息会逐步进入价格，并预测子行业内的相对表现。",
+    "expected_horizon": 126,
+    "expected_sign": "positive",
+    "observable_proxies": [
+      {
+        "field": "operating_income",
+        "role": "经营盈利能力的分子",
+        "required": true
+      },
+      {
+        "field": "equity",
+        "role": "股东资本分母",
+        "required": true
+      },
+      {
+        "field": "subindustry",
+        "role": "执行截面对比的同类公司分组",
+        "required": true
+      }
+    ],
+    "claims": [
+      {
+        "name": "基本面盈利质量",
+        "required_categories": [
+          "fundamental"
+        ]
+      }
+    ],
+    "failure_modes": [
+      "Equity 为负值或极小值",
+      "财务报告呈阶梯状且信息陈旧",
+      "缺失值导致权重集中",
+      "盈利质量暴露过度拥挤"
+    ]
+  },
+  "semantic_description": "计算经营利润与股东权益之比，得到个股 126 日时序排名，再在子行业内执行截面排名。",
+  "expression": "group_rank(ts_rank(operating_income / equity, 126), subindustry)",
+  "settings": {
+    "decay": 0,
+    "neutralization": "SUBINDUSTRY",
+    "truncation": 0.08,
+    "nanHandling": "ON"
+  },
+  "operation": "initialization",
+  "parents": []
+}
+

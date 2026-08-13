@@ -1,0 +1,139 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "QuantaAlpha WQ Candidate",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "direction_id",
+    "hypothesis",
+    "semantic_description",
+    "expression",
+    "settings",
+    "operation",
+    "parents"
+  ],
+  "properties": {
+    "direction_id": {
+      "type": "string"
+    },
+    "hypothesis": {
+      "type": "object",
+      "required": [
+        "mechanism",
+        "expected_horizon",
+        "expected_sign",
+        "observable_proxies",
+        "failure_modes"
+      ],
+      "properties": {
+        "mechanism": {
+          "type": "string",
+          "minLength": 20
+        },
+        "expected_horizon": {
+          "oneOf": [
+            {
+              "type": "integer",
+              "minimum": 1
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "expected_sign": {
+          "enum": [
+            "positive",
+            "negative",
+            "conditional",
+            "nonlinear"
+          ]
+        },
+        "observable_proxies": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": [
+              "field",
+              "role"
+            ],
+            "properties": {
+              "field": {
+                "type": "string"
+              },
+              "role": {
+                "type": "string"
+              },
+              "required": {
+                "type": "boolean",
+                "default": true
+              }
+            }
+          }
+        },
+        "claims": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "name",
+              "required_categories"
+            ],
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "required_categories": {
+                "type": "array",
+                "items": {
+                  "enum": [
+                    "fundamental",
+                    "analyst",
+                    "news",
+                    "option",
+                    "pv",
+                    "socialmedia",
+                    "model"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "failure_modes": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "semantic_description": {
+      "type": "string"
+    },
+    "expression": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 250
+    },
+    "settings": {
+      "type": "object"
+    },
+    "operation": {
+      "enum": [
+        "initialization",
+        "mutation",
+        "crossover"
+      ]
+    },
+    "parents": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}
+

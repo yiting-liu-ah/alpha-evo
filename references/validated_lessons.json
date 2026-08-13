@@ -1,0 +1,808 @@
+{
+  "lessons": [
+    {
+      "evidence_grade": "repeatable",
+      "minimum_support": 3,
+      "observations": [
+        {
+          "action": "retain forecast yield as a parent, then revalidate horizon and proxy variants before redundancy checks",
+          "family": "analyst-forecast-yield",
+          "finding": "medium-to-long horizon forecast-yield levels repeatedly passed the core TRAIN metric gates",
+          "kind": "family_metric_profile",
+          "support": "3-9"
+        },
+        {
+          "action": "prefer mechanism-coherent blends and test weight stability; do not infer low ACTIVE correlation from formula diversity",
+          "families": [
+            "analyst",
+            "fundamental"
+          ],
+          "finding": "coherent forecast-yield plus profitability or cash-flow blends repeatedly retained strong TRAIN quality with acceptable turnover",
+          "kind": "complementary_crossover",
+          "support": "3-9"
+        }
+      ],
+      "privacy": "Thresholded aggregate only. No run IDs, Alpha IDs, expressions, exact metrics, PnL, or account-linked statuses are included.",
+      "sample_size_band": "10-29",
+      "schema_version": 2,
+      "source": "browser_run_sanitized"
+    },
+    {
+      "evidence_grade": "repeatable",
+      "generated_at": "2026-08-03T07:23:34.015546+00:00",
+      "lesson_id": "6c1b5748cdf89b2e",
+      "minimum_support": 3,
+      "observations": [
+        {
+          "action": "prefer mechanism-level mutation over parameter-only tuning",
+          "family": "fundamental",
+          "finding": "weak median fitness",
+          "kind": "family_metric_profile",
+          "median_fitness_band": "[0.5,1.0)",
+          "median_sharpe_band": "[0.0,1.25)",
+          "median_turnover_band": "[0.01,0.2)",
+          "support": "3-9"
+        },
+        {
+          "action": "prefer mechanism-level mutation over parameter-only tuning",
+          "family": "technical",
+          "finding": "weak median fitness",
+          "kind": "family_metric_profile",
+          "median_fitness_band": "[0.5,1.0)",
+          "median_sharpe_band": "[1.25,1.5)",
+          "median_turnover_band": "[0.2,0.35)",
+          "support": "3-9"
+        },
+        {
+          "action": "use fault-localized mutation and preserve already validated segments",
+          "check": "LOW_FITNESS",
+          "kind": "repeated_is_failure",
+          "support": "10-29"
+        },
+        {
+          "action": "use fault-localized mutation and preserve already validated segments",
+          "check": "LOW_SHARPE",
+          "kind": "repeated_is_failure",
+          "support": "3-9"
+        },
+        {
+          "action": "use fault-localized mutation and preserve already validated segments",
+          "check": "LOW_SUB_UNIVERSE_SHARPE",
+          "kind": "repeated_is_failure",
+          "support": "3-9"
+        }
+      ],
+      "privacy": "Thresholded aggregate only. No alpha IDs, expressions, exact account counts, PnL series, timestamps, or account-linked statuses are included.",
+      "schema_version": 2,
+      "source": "account_sync_sanitized"
+    },
+    {
+      "evidence_grade": "repeatable",
+      "generated_at": "2026-08-04T02:11:08.844159+00:00",
+      "lesson_id": "d3b8fc44751f8d0f",
+      "minimum_support": 3,
+      "observations": [
+        {
+          "action": "prefer mechanism-level mutation over parameter-only tuning",
+          "family": "analyst+technical",
+          "finding": "weak median fitness",
+          "kind": "family_metric_profile",
+          "median_fitness_band": "[0.5,1.0)",
+          "median_sharpe_band": "[1.25,1.5)",
+          "median_turnover_band": "[0.01,0.2)",
+          "support": "3-9"
+        },
+        {
+          "action": "prefer mechanism-level mutation over parameter-only tuning",
+          "family": "analyst+technical+sentiment",
+          "finding": "weak median fitness",
+          "kind": "family_metric_profile",
+          "median_fitness_band": "[0.5,1.0)",
+          "median_sharpe_band": "[1.25,1.5)",
+          "median_turnover_band": "[0.01,0.2)",
+          "support": "3-9"
+        },
+        {
+          "action": "prefer mechanism-level mutation over parameter-only tuning",
+          "family": "fundamental",
+          "finding": "weak median fitness",
+          "kind": "family_metric_profile",
+          "median_fitness_band": "[0.5,1.0)",
+          "median_sharpe_band": "[0.0,1.25)",
+          "median_turnover_band": "[0.01,0.2)",
+          "support": "10-29"
+        },
+        {
+          "action": "prefer mechanism-level mutation over parameter-only tuning",
+          "family": "fundamental+technical",
+          "finding": "weak median fitness",
+          "kind": "family_metric_profile",
+          "median_fitness_band": "[-inf,0.5)",
+          "median_sharpe_band": "[0.0,1.25)",
+          "median_turnover_band": "[0.01,0.2)",
+          "support": "3-9"
+        },
+        {
+          "action": "prefer mechanism-level mutation over parameter-only tuning",
+          "family": "sentiment",
+          "finding": "weak median fitness",
+          "kind": "family_metric_profile",
+          "median_fitness_band": "[-inf,0.5)",
+          "median_sharpe_band": "[0.0,1.25)",
+          "median_turnover_band": "[0.01,0.2)",
+          "support": "3-9"
+        },
+        {
+          "action": "prefer mechanism-level mutation over parameter-only tuning",
+          "family": "technical",
+          "finding": "weak median fitness",
+          "kind": "family_metric_profile",
+          "median_fitness_band": "[0.5,1.0)",
+          "median_sharpe_band": "[0.0,1.25)",
+          "median_turnover_band": "[0.2,0.35)",
+          "support": "10-29"
+        },
+        {
+          "action": "use fault-localized mutation and preserve already validated segments",
+          "check": "LOW_FITNESS",
+          "kind": "repeated_is_failure",
+          "support": "30+"
+        },
+        {
+          "action": "use fault-localized mutation and preserve already validated segments",
+          "check": "LOW_SHARPE",
+          "kind": "repeated_is_failure",
+          "support": "30+"
+        },
+        {
+          "action": "use fault-localized mutation and preserve already validated segments",
+          "check": "LOW_SUB_UNIVERSE_SHARPE",
+          "kind": "repeated_is_failure",
+          "support": "10-29"
+        }
+      ],
+      "privacy": "Thresholded aggregate only. No alpha IDs, expressions, exact account counts, PnL series, timestamps, or account-linked statuses are included.",
+      "schema_version": 2,
+      "source": "account_sync_sanitized"
+    },
+    {
+      "evidence_grade": "repeatable",
+      "generated_at": "2026-08-04T02:54:06.826068+00:00",
+      "minimum_support": 3,
+      "observations": [
+        {
+          "action": "Reduce path sensitivity and turnover while preserving the mechanism and primary fields.",
+          "fault": "realization",
+          "kind": "repeated_fault",
+          "support": "30+"
+        },
+        {
+          "action": "Seek orthogonal conditional information without expanding unnecessary complexity.",
+          "fault": "risk_or_saturation",
+          "kind": "repeated_fault",
+          "support": "3-9"
+        }
+      ],
+      "operation_support": {
+        "crossover": "10-29",
+        "initialization": "10-29",
+        "mutation": "10-29"
+      },
+      "privacy": "Thresholded aggregate only. No run IDs, alpha IDs, candidate IDs, expressions, exact rewards, PnL series, or account statuses are included.",
+      "reward_summary": {
+        "best_band": "[0.5,1.0)",
+        "median_band": "[0,0.5)",
+        "metric_gate_pass_rate_band": "[0,0.25)"
+      },
+      "sample_size_band": "30+",
+      "schema_version": 2,
+      "source_run": "sanitized",
+      "supported_directions": [
+        "fundamental-change",
+        "investment-efficiency",
+        "news-sentiment",
+        "price-volume-microstructure",
+        "profitability-quality",
+        "profitability-quality-x-short-reversal",
+        "profitability-surprise-x-short-reversal",
+        "regime-conditioned-composite",
+        "valuation",
+        "valuation-x-news-confirmation",
+        "valuation-x-short-reversal",
+        "volatility-option"
+      ]
+    },
+    {
+      "evidence_grade": "repeatable",
+      "generated_at": "2026-08-04T03:42:17.641952+00:00",
+      "lesson_id": "5520950b2e102e22",
+      "minimum_support": 3,
+      "observations": [
+        {
+          "action": "prefer mechanism-level mutation over parameter-only tuning",
+          "family": "analyst+technical",
+          "finding": "weak median fitness",
+          "kind": "family_metric_profile",
+          "median_fitness_band": "[0.5,1.0)",
+          "median_sharpe_band": "[1.25,1.5)",
+          "median_turnover_band": "[0.01,0.2)",
+          "support": "3-9"
+        },
+        {
+          "action": "prefer mechanism-level mutation over parameter-only tuning",
+          "family": "analyst+technical+sentiment",
+          "finding": "weak median fitness",
+          "kind": "family_metric_profile",
+          "median_fitness_band": "[0.5,1.0)",
+          "median_sharpe_band": "[1.25,1.5)",
+          "median_turnover_band": "[0.01,0.2)",
+          "support": "3-9"
+        },
+        {
+          "action": "prefer mechanism-level mutation over parameter-only tuning",
+          "family": "fundamental",
+          "finding": "weak median fitness",
+          "kind": "family_metric_profile",
+          "median_fitness_band": "[0.5,1.0)",
+          "median_sharpe_band": "[0.0,1.25)",
+          "median_turnover_band": "[0.01,0.2)",
+          "support": "10-29"
+        },
+        {
+          "action": "prefer mechanism-level mutation over parameter-only tuning",
+          "family": "fundamental+technical",
+          "finding": "weak median fitness",
+          "kind": "family_metric_profile",
+          "median_fitness_band": "[0.5,1.0)",
+          "median_sharpe_band": "[0.0,1.25)",
+          "median_turnover_band": "[0.01,0.2)",
+          "support": "10-29"
+        },
+        {
+          "action": "prefer mechanism-level mutation over parameter-only tuning",
+          "family": "other",
+          "finding": "weak median fitness",
+          "kind": "family_metric_profile",
+          "median_fitness_band": "[-inf,0.5)",
+          "median_sharpe_band": "[0.0,1.25)",
+          "median_turnover_band": "[0.01,0.2)",
+          "support": "3-9"
+        },
+        {
+          "action": "prefer mechanism-level mutation over parameter-only tuning",
+          "family": "sentiment",
+          "finding": "weak median fitness",
+          "kind": "family_metric_profile",
+          "median_fitness_band": "[-inf,0.5)",
+          "median_sharpe_band": "[0.0,1.25)",
+          "median_turnover_band": "[0.01,0.2)",
+          "support": "3-9"
+        },
+        {
+          "action": "prefer mechanism-level mutation over parameter-only tuning",
+          "family": "technical",
+          "finding": "weak median fitness",
+          "kind": "family_metric_profile",
+          "median_fitness_band": "[0.5,1.0)",
+          "median_sharpe_band": "[0.0,1.25)",
+          "median_turnover_band": "[0.2,0.35)",
+          "support": "10-29"
+        },
+        {
+          "action": "use fault-localized mutation and preserve already validated segments",
+          "check": "LOW_FITNESS",
+          "kind": "repeated_is_failure",
+          "support": "30+"
+        },
+        {
+          "action": "use fault-localized mutation and preserve already validated segments",
+          "check": "LOW_SHARPE",
+          "kind": "repeated_is_failure",
+          "support": "30+"
+        },
+        {
+          "action": "use fault-localized mutation and preserve already validated segments",
+          "check": "LOW_SUB_UNIVERSE_SHARPE",
+          "kind": "repeated_is_failure",
+          "support": "10-29"
+        }
+      ],
+      "privacy": "Thresholded aggregate only. No alpha IDs, expressions, exact account counts, PnL series, timestamps, or account-linked statuses are included.",
+      "schema_version": 2,
+      "source": "account_sync_sanitized"
+    },
+    {
+      "evidence_grade": "repeatable",
+      "generated_at": "2026-08-04T08:45:52.351974+00:00",
+      "lesson_id": "00af4c019c0acce4",
+      "minimum_support": 3,
+      "observations": [
+        {
+          "action": "prefer mechanism-level mutation over parameter-only tuning",
+          "family": "analyst+technical",
+          "finding": "weak median fitness",
+          "kind": "family_metric_profile",
+          "median_fitness_band": "[0.5,1.0)",
+          "median_sharpe_band": "[1.25,1.5)",
+          "median_turnover_band": "[0.01,0.2)",
+          "support": "3-9"
+        },
+        {
+          "action": "prefer mechanism-level mutation over parameter-only tuning",
+          "family": "analyst+technical+sentiment",
+          "finding": "weak median fitness",
+          "kind": "family_metric_profile",
+          "median_fitness_band": "[0.5,1.0)",
+          "median_sharpe_band": "[1.25,1.5)",
+          "median_turnover_band": "[0.01,0.2)",
+          "support": "3-9"
+        },
+        {
+          "action": "prefer mechanism-level mutation over parameter-only tuning",
+          "family": "fundamental",
+          "finding": "weak median fitness",
+          "kind": "family_metric_profile",
+          "median_fitness_band": "[0.5,1.0)",
+          "median_sharpe_band": "[0.0,1.25)",
+          "median_turnover_band": "[0.01,0.2)",
+          "support": "10-29"
+        },
+        {
+          "action": "prefer mechanism-level mutation over parameter-only tuning",
+          "family": "fundamental+technical",
+          "finding": "weak median fitness",
+          "kind": "family_metric_profile",
+          "median_fitness_band": "[0.5,1.0)",
+          "median_sharpe_band": "[0.0,1.25)",
+          "median_turnover_band": "[0.01,0.2)",
+          "support": "10-29"
+        },
+        {
+          "action": "prefer mechanism-level mutation over parameter-only tuning",
+          "family": "other",
+          "finding": "weak median fitness",
+          "kind": "family_metric_profile",
+          "median_fitness_band": "[-inf,0.5)",
+          "median_sharpe_band": "[0.0,1.25)",
+          "median_turnover_band": "[0.01,0.2)",
+          "support": "3-9"
+        },
+        {
+          "action": "prefer mechanism-level mutation over parameter-only tuning",
+          "family": "sentiment",
+          "finding": "weak median fitness",
+          "kind": "family_metric_profile",
+          "median_fitness_band": "[-inf,0.5)",
+          "median_sharpe_band": "[0.0,1.25)",
+          "median_turnover_band": "[0.2,0.35)",
+          "support": "3-9"
+        },
+        {
+          "action": "prefer mechanism-level mutation over parameter-only tuning",
+          "family": "technical",
+          "finding": "weak median fitness",
+          "kind": "family_metric_profile",
+          "median_fitness_band": "[0.5,1.0)",
+          "median_sharpe_band": "[0.0,1.25)",
+          "median_turnover_band": "[0.2,0.35)",
+          "support": "10-29"
+        },
+        {
+          "action": "use fault-localized mutation and preserve already validated segments",
+          "check": "LOW_FITNESS",
+          "kind": "repeated_is_failure",
+          "support": "30+"
+        },
+        {
+          "action": "use fault-localized mutation and preserve already validated segments",
+          "check": "LOW_SHARPE",
+          "kind": "repeated_is_failure",
+          "support": "30+"
+        },
+        {
+          "action": "use fault-localized mutation and preserve already validated segments",
+          "check": "LOW_SUB_UNIVERSE_SHARPE",
+          "kind": "repeated_is_failure",
+          "support": "30+"
+        }
+      ],
+      "privacy": "Thresholded aggregate only. No alpha IDs, expressions, exact account counts, PnL series, timestamps, or account-linked statuses are included.",
+      "schema_version": 2,
+      "source": "account_sync_sanitized"
+    },
+    {
+      "evidence_grade": "repeatable",
+      "generated_at": "2026-08-06T03:48:19.604067+00:00",
+      "minimum_support": 3,
+      "observations": [
+        {
+          "action": "Reduce path sensitivity and turnover while preserving the mechanism and primary fields.",
+          "fault": "realization",
+          "kind": "repeated_fault",
+          "support": "30+"
+        },
+        {
+          "action": "Seek orthogonal conditional information without expanding unnecessary complexity.",
+          "fault": "risk_or_saturation",
+          "kind": "repeated_fault",
+          "support": "10-29"
+        }
+      ],
+      "operation_support": {
+        "crossover": "30+",
+        "initialization": "30+",
+        "mutation": "30+"
+      },
+      "privacy": "Thresholded aggregate only. No run IDs, alpha IDs, candidate IDs, expressions, exact rewards, PnL series, or account statuses are included.",
+      "reward_summary": {
+        "best_band": "[0.5,1.0)",
+        "median_band": "[0,0.5)",
+        "metric_gate_pass_rate_band": "[0,0.25)"
+      },
+      "sample_size_band": "30+",
+      "schema_version": 2,
+      "source_run": "sanitized",
+      "supported_directions": [
+        "analyst-revision",
+        "cashflow-accrual",
+        "forecast-cash-quality-risk-control",
+        "forecast-cash-vwap-pressure",
+        "forecast-earning-power-x-cash-conversion",
+        "forecast-valuation-x-profitability-confirmation",
+        "forecast-yield-gross-margin",
+        "forecast-yield-risk-relief",
+        "forecast-yield-volume-confirmed-reversal",
+        "fundamental-change",
+        "investment-efficiency",
+        "news-sentiment",
+        "price-volume-microstructure",
+        "profitability-quality",
+        "profitability-quality-x-short-reversal",
+        "profitability-surprise-x-short-reversal",
+        "regime-conditioned-composite",
+        "valuation",
+        "valuation-cash-quality",
+        "valuation-x-news-confirmation",
+        "valuation-x-short-reversal",
+        "volatility-option"
+      ]
+    },
+    {
+      "evidence_grade": "repeatable",
+      "generated_at": "2026-08-06T07:25:44.378867+00:00",
+      "lesson_id": "53a1c7374d1463c6",
+      "minimum_support": 3,
+      "observations": [
+        {
+          "action": "retain as a parent only after redundancy and regime checks",
+          "family": "analyst+technical",
+          "finding": "promising median fitness",
+          "kind": "family_metric_profile",
+          "median_fitness_band": "[1.1,1.5)",
+          "median_sharpe_band": "[1.5,2.0)",
+          "median_turnover_band": "[0.01,0.2)",
+          "support": "10-29"
+        },
+        {
+          "action": "prefer mechanism-level mutation over parameter-only tuning",
+          "family": "analyst+technical+sentiment",
+          "finding": "weak median fitness",
+          "kind": "family_metric_profile",
+          "median_fitness_band": "[0.5,1.0)",
+          "median_sharpe_band": "[1.25,1.5)",
+          "median_turnover_band": "[0.01,0.2)",
+          "support": "3-9"
+        },
+        {
+          "action": "prefer mechanism-level mutation over parameter-only tuning",
+          "family": "fundamental",
+          "finding": "weak median fitness",
+          "kind": "family_metric_profile",
+          "median_fitness_band": "[0.5,1.0)",
+          "median_sharpe_band": "[0.0,1.25)",
+          "median_turnover_band": "[0.01,0.2)",
+          "support": "10-29"
+        },
+        {
+          "action": "prefer mechanism-level mutation over parameter-only tuning",
+          "family": "fundamental+analyst+technical",
+          "finding": "weak median fitness",
+          "kind": "family_metric_profile",
+          "median_fitness_band": "[0.5,1.0)",
+          "median_sharpe_band": "[0.0,1.25)",
+          "median_turnover_band": "[0.01,0.2)",
+          "support": "3-9"
+        },
+        {
+          "action": "prefer mechanism-level mutation over parameter-only tuning",
+          "family": "fundamental+technical",
+          "finding": "weak median fitness",
+          "kind": "family_metric_profile",
+          "median_fitness_band": "[0.5,1.0)",
+          "median_sharpe_band": "[0.0,1.25)",
+          "median_turnover_band": "[0.01,0.2)",
+          "support": "30+"
+        },
+        {
+          "action": "prefer mechanism-level mutation over parameter-only tuning",
+          "family": "other",
+          "finding": "weak median fitness",
+          "kind": "family_metric_profile",
+          "median_fitness_band": "[-inf,0.5)",
+          "median_sharpe_band": "[0.0,1.25)",
+          "median_turnover_band": "[0.01,0.2)",
+          "support": "3-9"
+        },
+        {
+          "action": "prefer mechanism-level mutation over parameter-only tuning",
+          "family": "sentiment",
+          "finding": "weak median fitness",
+          "kind": "family_metric_profile",
+          "median_fitness_band": "[-inf,0.5)",
+          "median_sharpe_band": "[0.0,1.25)",
+          "median_turnover_band": "[0.2,0.35)",
+          "support": "3-9"
+        },
+        {
+          "action": "prefer mechanism-level mutation over parameter-only tuning",
+          "family": "technical",
+          "finding": "weak median fitness",
+          "kind": "family_metric_profile",
+          "median_fitness_band": "[0.5,1.0)",
+          "median_sharpe_band": "[0.0,1.25)",
+          "median_turnover_band": "[0.2,0.35)",
+          "support": "10-29"
+        },
+        {
+          "action": "prefer mechanism-level mutation over parameter-only tuning",
+          "family": "technical+option",
+          "finding": "weak median fitness",
+          "kind": "family_metric_profile",
+          "median_fitness_band": "[0.5,1.0)",
+          "median_sharpe_band": "[0.0,1.25)",
+          "median_turnover_band": "[0.01,0.2)",
+          "support": "3-9"
+        },
+        {
+          "action": "use fault-localized mutation and preserve already validated segments",
+          "check": "LOW_FITNESS",
+          "kind": "repeated_is_failure",
+          "support": "30+"
+        },
+        {
+          "action": "use fault-localized mutation and preserve already validated segments",
+          "check": "LOW_SHARPE",
+          "kind": "repeated_is_failure",
+          "support": "30+"
+        },
+        {
+          "action": "use fault-localized mutation and preserve already validated segments",
+          "check": "LOW_SUB_UNIVERSE_SHARPE",
+          "kind": "repeated_is_failure",
+          "support": "30+"
+        }
+      ],
+      "privacy": "Thresholded aggregate only. No alpha IDs, expressions, exact account counts, PnL series, timestamps, or account-linked statuses are included.",
+      "schema_version": 2,
+      "source": "account_sync_sanitized"
+    },
+    {
+      "evidence_grade": "repeatable",
+      "generated_at": "2026-08-06T08:14:28.208004+00:00",
+      "lesson_id": "8901b9a45cf5aeb8",
+      "minimum_support": 3,
+      "observations": [
+        {
+          "action": "retain as a parent only after redundancy and regime checks",
+          "family": "analyst+technical",
+          "finding": "promising median fitness",
+          "kind": "family_metric_profile",
+          "median_fitness_band": "[1.1,1.5)",
+          "median_sharpe_band": "[1.25,1.5)",
+          "median_turnover_band": "[0.01,0.2)",
+          "support": "10-29"
+        },
+        {
+          "action": "prefer mechanism-level mutation over parameter-only tuning",
+          "family": "analyst+technical+sentiment",
+          "finding": "weak median fitness",
+          "kind": "family_metric_profile",
+          "median_fitness_band": "[0.5,1.0)",
+          "median_sharpe_band": "[1.5,2.0)",
+          "median_turnover_band": "[0.01,0.2)",
+          "support": "3-9"
+        },
+        {
+          "action": "prefer mechanism-level mutation over parameter-only tuning",
+          "family": "fundamental",
+          "finding": "weak median fitness",
+          "kind": "family_metric_profile",
+          "median_fitness_band": "[0.5,1.0)",
+          "median_sharpe_band": "[0.0,1.25)",
+          "median_turnover_band": "[0.01,0.2)",
+          "support": "30+"
+        },
+        {
+          "action": "prefer mechanism-level mutation over parameter-only tuning",
+          "family": "fundamental+analyst+technical",
+          "finding": "weak median fitness",
+          "kind": "family_metric_profile",
+          "median_fitness_band": "[0.5,1.0)",
+          "median_sharpe_band": "[0.0,1.25)",
+          "median_turnover_band": "[0.01,0.2)",
+          "support": "3-9"
+        },
+        {
+          "action": "prefer mechanism-level mutation over parameter-only tuning",
+          "family": "fundamental+technical",
+          "finding": "weak median fitness",
+          "kind": "family_metric_profile",
+          "median_fitness_band": "[0.5,1.0)",
+          "median_sharpe_band": "[0.0,1.25)",
+          "median_turnover_band": "[0.01,0.2)",
+          "support": "30+"
+        },
+        {
+          "action": "prefer mechanism-level mutation over parameter-only tuning",
+          "family": "fundamental+technical+option",
+          "finding": "weak median fitness",
+          "kind": "family_metric_profile",
+          "median_fitness_band": "[-inf,0.5)",
+          "median_sharpe_band": "[0.0,1.25)",
+          "median_turnover_band": "[0.01,0.2)",
+          "support": "3-9"
+        },
+        {
+          "action": "prefer mechanism-level mutation over parameter-only tuning",
+          "family": "other",
+          "finding": "weak median fitness",
+          "kind": "family_metric_profile",
+          "median_fitness_band": "[-inf,0.5)",
+          "median_sharpe_band": "[0.0,1.25)",
+          "median_turnover_band": "[0.01,0.2)",
+          "support": "3-9"
+        },
+        {
+          "action": "prefer mechanism-level mutation over parameter-only tuning",
+          "family": "sentiment",
+          "finding": "weak median fitness",
+          "kind": "family_metric_profile",
+          "median_fitness_band": "[-inf,0.5)",
+          "median_sharpe_band": "[0.0,1.25)",
+          "median_turnover_band": "[0.2,0.35)",
+          "support": "3-9"
+        },
+        {
+          "action": "prefer mechanism-level mutation over parameter-only tuning",
+          "family": "technical",
+          "finding": "weak median fitness",
+          "kind": "family_metric_profile",
+          "median_fitness_band": "[0.5,1.0)",
+          "median_sharpe_band": "[0.0,1.25)",
+          "median_turnover_band": "[0.01,0.2)",
+          "support": "30+"
+        },
+        {
+          "action": "prefer mechanism-level mutation over parameter-only tuning",
+          "family": "technical+option",
+          "finding": "weak median fitness",
+          "kind": "family_metric_profile",
+          "median_fitness_band": "[0.5,1.0)",
+          "median_sharpe_band": "[0.0,1.25)",
+          "median_turnover_band": "[0.01,0.2)",
+          "support": "3-9"
+        },
+        {
+          "action": "use fault-localized mutation and preserve already validated segments",
+          "check": "LOW_FITNESS",
+          "kind": "repeated_is_failure",
+          "support": "30+"
+        },
+        {
+          "action": "use fault-localized mutation and preserve already validated segments",
+          "check": "LOW_SHARPE",
+          "kind": "repeated_is_failure",
+          "support": "30+"
+        },
+        {
+          "action": "use fault-localized mutation and preserve already validated segments",
+          "check": "LOW_SUB_UNIVERSE_SHARPE",
+          "kind": "repeated_is_failure",
+          "support": "30+"
+        }
+      ],
+      "privacy": "Thresholded aggregate only. No alpha IDs, expressions, exact account counts, PnL series, timestamps, or account-linked statuses are included.",
+      "schema_version": 2,
+      "source": "account_sync_sanitized"
+    },
+    {
+      "evidence_grade": "repeatable",
+      "generated_at": "2026-08-13T02:18:07.060900+00:00",
+      "minimum_support": 3,
+      "observations": [
+        {
+          "action": "Make one exposure repair aimed at small-cap or liquidity dependence.",
+          "fault": "exposure",
+          "kind": "repeated_fault",
+          "support": "30+"
+        },
+        {
+          "action": "Identify whether Fitness is limited by turnover or weak return, then change exactly one cause. Do not assume that more smoothing is always the answer.",
+          "fault": "fitness",
+          "kind": "repeated_fault",
+          "support": "30+"
+        },
+        {
+          "action": "Make exactly one explicit decorrelation change. Preserve the parent's validated evidence; change one correlated signal leg, one observable proxy, or one meaningful state filter.",
+          "fault": "redundancy",
+          "kind": "repeated_fault",
+          "support": "30+"
+        },
+        {
+          "action": "Choose one explicit, testable change supported by the recorded evaluation.",
+          "fault": "risk_or_saturation",
+          "kind": "repeated_fault",
+          "support": "10-29"
+        }
+      ],
+      "operation_support": {
+        "crossover": "30+",
+        "initialization": "30+",
+        "mutation": "30+"
+      },
+      "privacy": "Thresholded aggregate only. No run IDs, alpha IDs, candidate IDs, expressions, exact rewards, PnL series, or account statuses are included.",
+      "reward_summary": {
+        "best_band": "[0.5,1.0)",
+        "median_band": "[0,0.5)",
+        "metric_gate_pass_rate_band": "[0.25,0.50)"
+      },
+      "sample_size_band": "30+",
+      "schema_version": 2,
+      "source_run": "sanitized",
+      "supported_directions": [
+        "analyst-revision",
+        "cashflow-accrual",
+        "feedback-redundancy-crossover4-analyst-cash-intraday",
+        "feedback-redundancy-crossover4-analyst-return-regime",
+        "feedback-redundancy-crossover4-analyst-vwap-pressure",
+        "feedback-redundancy-crossover5-forecast-cash-level",
+        "feedback-redundancy-feedback-crossover-analyst-level-alt-price-reversal-vwap-conditional_interaction",
+        "feedback-redundancy-feedback-crossover-analyst-level-alt-price-reversal-vwap-dual_rank",
+        "feedback-redundancy-feedback-redundancy-forecast-return-volume-confirmation",
+        "feedback-redundancy-forecast-cash-short-reversal",
+        "feedback-redundancy-forecast-cash-smoothed-vwap-pressure",
+        "feedback-redundancy-forecast-cash-vwap-pressure",
+        "feedback-redundancy-news-relative",
+        "feedback-redundancy-option-downside",
+        "feedback-risk_or_saturation-feedback-crossover-analyst-level-alt-fundamental-profitability-dual_rank",
+        "forecast-cash-quality-risk-control",
+        "forecast-cash-vwap-pressure",
+        "forecast-cashflow-yield",
+        "forecast-earning-power-x-cash-conversion",
+        "forecast-valuation-x-profitability-confirmation",
+        "forecast-yield-gross-margin",
+        "forecast-yield-risk-relief",
+        "forecast-yield-volume-confirmed-reversal",
+        "fundamental-change",
+        "investment-efficiency",
+        "mutation-news-composite-exposure",
+        "mutation-option-implied-spread",
+        "mutation-volume-confirmed-pressure",
+        "news-sentiment",
+        "price-volume-microstructure",
+        "profitability-level-and-change",
+        "profitability-quality",
+        "profitability-quality-x-short-reversal",
+        "profitability-surprise-x-short-reversal",
+        "regime-conditioned-composite",
+        "return-vwap-reversal",
+        "valuation",
+        "valuation-cash-quality",
+        "valuation-x-news-confirmation",
+        "valuation-x-short-reversal",
+        "volatility-option"
+      ]
+    }
+  ],
+  "schema_version": 2
+}

@@ -1,0 +1,50 @@
+{
+  "direction_id": "profitability-quality",
+  "hypothesis": {
+    "mechanism": "Improving operating profitability is incorporated gradually and predicts relative performance within subindustries.",
+    "expected_horizon": 126,
+    "expected_sign": "positive",
+    "observable_proxies": [
+      {
+        "field": "operating_income",
+        "role": "operating profitability numerator",
+        "required": true
+      },
+      {
+        "field": "equity",
+        "role": "shareholder-capital denominator",
+        "required": true
+      },
+      {
+        "field": "subindustry",
+        "role": "peer group for cross-sectional comparison",
+        "required": true
+      }
+    ],
+    "claims": [
+      {
+        "name": "fundamental profitability",
+        "required_categories": [
+          "fundamental"
+        ]
+      }
+    ],
+    "failure_modes": [
+      "negative or very small equity",
+      "stale stepwise financial reports",
+      "missing-data concentration",
+      "crowded profitability exposure"
+    ]
+  },
+  "semantic_description": "Compute operating return on equity, rank its 126-day history per stock, then rank the result within subindustry.",
+  "expression": "group_rank(ts_rank(operating_income / equity, 126), subindustry)",
+  "settings": {
+    "decay": 0,
+    "neutralization": "SUBINDUSTRY",
+    "truncation": 0.08,
+    "nanHandling": "ON"
+  },
+  "operation": "initialization",
+  "parents": []
+}
+
