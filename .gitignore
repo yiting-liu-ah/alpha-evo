@@ -1,0 +1,33 @@
+# Credentials, authentication state, and local secrets
+credential.txt
+credentials.*
+*.credential
+*.credentials
+.env
+.env.*
+!.env.example
+!.env.template
+*.secret
+*.secrets
+*token*
+*cookie*
+*session*
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+private/
+
+# Local research state and generated output
+research_runs/
+alpha_db.json
+batch_submit_results.json
+tmp/
+
+# Python and editor artifacts
+*.pyc
+__pycache__/
+.venv/
+venv/
+.DS_Store
