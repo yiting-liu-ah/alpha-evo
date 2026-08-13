@@ -1,0 +1,4 @@
+interface:
+  display_name: "QuantaAlpha WQ Enterprise Research"
+  short_description: "WorldQuant BRAIN 轨迹进化、自动提交与可审计因子研究"
+  default_prompt: "Use $quantaalpha-wq-research to run a mechanism- and lineage-aware mutation-then-crossover WorldQuant BRAIN cycle and automatically submit eligible alphas."
